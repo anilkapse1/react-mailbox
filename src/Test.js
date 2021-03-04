@@ -1,65 +1,72 @@
 import React, { useState } from 'react';
-import AddCircleSharpIcon from '@material-ui/icons/AddCircleSharp';
-import TextField from '@material-ui/core/TextField';
-import HighlightOffSharpIcon from '@material-ui/icons/HighlightOffSharp';
-import { green } from '@material-ui/core/colors';
+import Button from '@material-ui/core/Button';
+
+import Badge from '@material-ui/core/Badge';
+import MailIcon from '@material-ui/icons/Mail';
+import AddCircleIcon from '@material-ui/icons/AddCircle';
+import DeleteIcon from '@material-ui/icons/Delete';
+import Box from '@material-ui/core/Box';
 
 import './Test.css';
 
 
-const Test=()=>{
+const Test = () => {
+
+    let [number, setNumber] = useState(1);
+    let [newNumber, newSetNumber] = useState([number]);
 
 
-    const [getList, setList] = useState("");
-    const [newGetList, newSetList] = useState([]);
-
-    const fetchValue=(e)=>{
-        setList(e.target.value);
+    const increment=()=>{
+        setNumber(number+1);
+        newSetNumber((oldvalue)=>{
+            return [...oldvalue,number+1]
+        })
     }
 
-    const addList=()=>{
-        if(getList!=""){
-            newSetList((oldvalue)=>{
-                return [...oldvalue,getList]
-            })
-        }else{
-            return false;
-        }
-
-        setList("");
-    }
-
-    const removeList=(e)=>{
-        newSetList((oldvalue)=>{
+    const decrement=(e)=>{
+        setNumber(number-1);
+        newSetNumber((oldvalue)=>{
             return oldvalue.filter((value,index)=>{
-                return index!==e;
+                return e!==index;
             })
         })
     }
 
-    let date = new Date().toLocaleDateString();
+
 
     return (
-          <div class="ctm-container"> 
-            <h1>{date}</h1>
-            <div class="add-section">
-                <TextField id="standard-basic" value={getList} label="Add List" name="list" onChange={fetchValue}/>
-                    <AddCircleSharpIcon  color="primary" onClick={addList}/>
-            </div>
 
-            <div class="list-section">
-               <ul>
-                    {newGetList.map((value,index)=>{
-                    return(
-                           <div class="list">
-                               <li>{value}</li>
-                               <HighlightOffSharpIcon  color="secondary" onClick={()=>removeList(index)} />
-                           </div> 
-                    )
-                    })}
-               </ul> 
-             </div>  
-          </div> 
+        <Box
+        boxShadow={3}
+        bgcolor="background.paper"
+        m={1}
+        p={5}
+        style={{ width: '200px',margin:'100px auto'}}>
+           <div class="container">
+            <Badge badgeContent={number} color="primary">
+                <MailIcon />
+            </Badge>
+
+            <div class="btn-section">
+             
+                <AddCircleIcon fontSize="small"  color="primary" onClick={increment} />
+               
+
+            </div>
+            <ol>
+            {newNumber.map((value,index)=>{
+                return(
+                    <>
+                        <li>mail <DeleteIcon fontSize="small"  color="primary" onClick={()=>decrement(index)} /></li>
+                    </>
+                )
+            })}
+            </ol>
+        </div>
+      </Box>
+
+
+    
     )
 }
 
