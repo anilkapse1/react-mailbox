@@ -1,6 +1,6 @@
 {
-  "name": "startreact",
   "homepage": "https://anilkapse1.github.io/react-mailbox",
+  "name": "startreact",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
