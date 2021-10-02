@@ -42,22 +42,19 @@ const Test = () => {
         m={1}
         p={5}
         style={{ width: '200px',margin:'100px auto'}}>
-           <div class="container">
+           <div className="container">
             <Badge badgeContent={number} color="primary">
                 <MailIcon />
             </Badge>
 
-            <div class="btn-section">
-             
+            <div className="btn-section">
                 <AddCircleIcon fontSize="small"  color="primary" onClick={increment} />
-               
-
             </div>
             <ol>
             {newNumber.map((value,index)=>{
                 return(
                     <>
-                        <li>mail <DeleteIcon fontSize="small"  color="primary" onClick={()=>decrement(index)} /></li>
+                        <li key={index}>mail <DeleteIcon fontSize="small"  color="primary" onClick={()=>decrement(index)} /></li>
                     </>
                 )
             })}
