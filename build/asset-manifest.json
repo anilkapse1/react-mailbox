@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/react-mailbox/static/css/main.308b5b98.chunk.css",
-    "main.js": "/react-mailbox/static/js/main.eb99df8e.chunk.js",
-    "main.js.map": "/react-mailbox/static/js/main.eb99df8e.chunk.js.map",
+    "main.js": "/react-mailbox/static/js/main.317f97a3.chunk.js",
+    "main.js.map": "/react-mailbox/static/js/main.317f97a3.chunk.js.map",
     "runtime-main.js": "/react-mailbox/static/js/runtime-main.0394fcc6.js",
     "runtime-main.js.map": "/react-mailbox/static/js/runtime-main.0394fcc6.js.map",
     "static/js/2.9b678998.chunk.js": "/react-mailbox/static/js/2.9b678998.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.0394fcc6.js",
     "static/js/2.9b678998.chunk.js",
     "static/css/main.308b5b98.chunk.css",
-    "static/js/main.eb99df8e.chunk.js"
+    "static/js/main.317f97a3.chunk.js"
   ]
 }
