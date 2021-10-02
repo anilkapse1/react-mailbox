@@ -36,11 +36,11 @@ const Test = () => {
     return (
 
         <Box
-        boxShadow={3}
-        bgcolor="background.paper"
-        m={1}
-        p={5}
-        style={{ width: '200px',margin:'100px auto'}}>
+            boxShadow={3}
+            bgcolor="background.paper"
+            m={1}
+            p={5}
+            style={{ width: '200px',margin:'100px auto',position:'relative'}}>
            <div className="container">
             <Badge badgeContent={number} color="primary">
                 <MailIcon />
