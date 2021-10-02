@@ -6,9 +6,8 @@ import MailIcon from '@material-ui/icons/Mail';
 import AddCircleIcon from '@material-ui/icons/AddCircle';
 import DeleteIcon from '@material-ui/icons/Delete';
 import Box from '@material-ui/core/Box';
-
 import './Test.css';
-
+import List from './List';
 
 const Test = () => {
 
@@ -48,13 +47,21 @@ const Test = () => {
             </Badge>
 
             <div className="btn-section">
+             
                 <AddCircleIcon fontSize="small"  color="primary" onClick={increment} />
+               
+
             </div>
             <ol>
             {newNumber.map((value,index)=>{
                 return(
                     <>
-                        <li key={index}>mail <DeleteIcon fontSize="small"  color="primary" onClick={()=>decrement(index)} /></li>
+                        <List
+                            key={index}
+                            id={index}
+                            hitTarget={decrement}
+
+                        />
                     </>
                 )
             })}
